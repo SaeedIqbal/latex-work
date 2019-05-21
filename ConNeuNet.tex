@@ -1,0 +1,407 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.text}
+\usepackage[most]{tcolorbox}
+\begin{document}
+	\pagestyle{empty}
+	
+	
+	% Define block styles
+	\tikzstyle{decision} = [diamond, draw, fill=yellow!30, 
+	text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!10, 
+	text width=5em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, circle,fill=blue!30, node distance=3cm,
+	minimum height=2em]
+	
+	\begin{tikzpicture}[node distance = 2cm, auto]
+	% Place nodes
+%Convolution Layer
+\node [block, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=2.4em,yshift=0.9em,fill=orange!50,opacity=0.2] (n) {\small{}};
+%Input Box
+\node [block, left of = n, node distance=0cm, minimum width=8em, minimum height=8em, text width=4em,xshift=-18em,yshift=5.5em,opacity=0.8,label={[shift={(0,-2.5)}]{\includegraphics[width=0.23\linewidth]{images/melanoma37}}}] (im) 	
+{};
+%Hadoop 
+\node[block, right of = im, node distance=0cm, minimum width=8em, minimum height=22em, text width=4em,xshift=10em,yshift=-0.5em,opacity=0.1,fill=gray!70,dashed,label={[shift={(-0.9,-4)},rotate=90,color=black]{HDFS based SPARK}}](hd){};
+
+\node [cloud, right of = hd, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=7em,fill=green,opacity=0.2,label={[shift={(0,-1),color=black}]{DN1}}] (dn1) {};
+\node [cloud, right of = hd, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=green,opacity=0.2,label={[shift={(0,-1),color=black}]{DN2}}] (dn2) {};
+\node [cloud, right of = hd, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=-7em,fill=green,opacity=0.2,label={[shift={(0,-1),color=black}]{DN3}}] (dn3) {};
+
+\node [block, above of = n, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n1) {\small{}};
+\node [block, above of = n1, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n2) {\small{}};
+\node [block, above of = n2, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n3) {\small{}};
+\node [block, above of = n3, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n4) {\small{}};
+\node [block, above of = n4, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n5) {\small{}};
+\node [block, above of = n5, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n6) {\small{}};
+\node [block, above of = n6, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n7) {\small{}};
+\node [block, above of = n7, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n8) {\small{}};
+\node [block, above of = n8, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n9) {\small{}};
+\node [block, above of = n9, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n10) {\small{}};
+%ReLu Layer
+%\node [block, right of= n, node distance=6cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=orange!50,opacity=0.2] (n11) {\small{}};
+%\node [block, above of = n11, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n12) {\small{}};
+%\node [block, above of = n12, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n13) {\small{}};
+%\node [block, above of = n13, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n14) {\small{}};
+%\node [block, above of = n14, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n15) {\small{}};
+%\node [block, above of = n15, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n16) {\small{}};
+%\node [block, above of = n16, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n17) {\small{}};
+%\node [block, above of = n17, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n18) {\small{}};
+%\node [block, above of = n18, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n19) {\small{}};
+%\node [block, above of = n19, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n20) {\small{}};
+%\node [block, above of = n20, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=orange!50,opacity=0.2] (n200) {\small{}};
+
+\node [block, above of = n5, node distance=0cm, minimum width=2em, minimum height=20em, text width=2em,xshift=10em,yshift=-0.5em,fill=orange!50,opacity=0.2,label={[shift={(0.3,-2.5)},gray,rotate=90,color=black]More Conv 2d Layers}] (con){};
+
+%Convolution Layer
+\node [block, right of= n, node distance=7.5cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=green!50,opacity=0.2] (n21) {\small{}};
+\node [block, above of = n21, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n22) {\small{}};
+\node [block, above of = n22, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n23) {\small{}};
+\node [block, above of = n23, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n24) {\small{}};
+\node [block, above of = n24, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n25) {\small{}};
+\node [block, above of = n25, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n26) {\small{}};
+\node [block, above of = n26, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n27) {\small{}};
+\node [block, above of = n27, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n28) {\small{}};
+\node [block, above of = n28, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n29) {\small{}};
+\node [block, above of = n29, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n30) {\small{}};
+\node [block, above of = n29, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n300) {\small{}};
+
+\node [block, above of = n25, node distance=0cm, minimum width=2em, minimum height=20em, text width=2em,xshift=9em,yshift=0.5em,fill=orange!50,opacity=0.2,label={[shift={(0.3,-3.5)},gray,rotate=90,color=black]More Layers}] (con){};
+
+\node [block, right of= n21, node distance=6cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=blue!50,opacity=0.2] (n31) {\small{}};
+\node [block, above of = n31, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n32) {\small{}};
+\node [block, above of = n32, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n33) {\small{}};
+\node [block, above of = n33, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n34) {\small{}};
+\node [block, above of = n34, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n35) {\small{}};
+\node [block, above of = n35, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n36) {\small{}};
+\node [block, above of = n36, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n37) {\small{}};
+\node [block, above of = n37, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n38) {\small{}};
+\node [block, above of = n38, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n39) {\small{}};
+\node [block, above of = n39, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n40) {\small{}};
+\node [block, above of = n40, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=blue!50,opacity=0.2] (n400) {\small{}};
+
+\node [block, right of= n31, node distance=6cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=yellow!50,opacity=0.2] (n41) {\small{}};
+\node [block, above of = n41, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n42) {\small{}};
+\node [block, above of = n42, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n43) {\small{}};
+\node [block, above of = n43, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n44) {\small{}};
+\node [block, above of = n44, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n45) {\small{}};
+\node [block, above of = n45, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n46) {\small{}};
+\node [block, above of = n46, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n47) {\small{}};
+\node [block, above of = n47, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n48) {\small{}};
+\node [block, above of = n48, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n49) {\small{}};
+\node [block, above of = n49, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n50) {\small{}};
+\node [block, above of = n50, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=yellow!50,opacity=0.2] (n500) {\small{}};
+
+%\node [block, right of= n41, node distance=6cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=red!50,opacity=0.2] (n51) {\small{}};
+%\node [block, above of = n51, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n52) {\small{}};
+%\node [block, above of = n52, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n53) {\small{}};
+%\node [block, above of = n53, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n54) {\small{}};
+%\node [block, above of = n54, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n55) {\small{}};
+%\node [block, above of = n55, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n56) {\small{}};
+%\node [block, above of = n56, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n57) {\small{}};
+%\node [block, above of = n57, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n58) {\small{}};
+%\node [block, above of = n58, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n59) {\small{}};
+%\node [block, above of = n59, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n60) {\small{}};
+%\node [block, above of = n60, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=red!50,opacity=0.2] (n600) {\small{}};
+
+
+%\node [block, right of= n51, node distance=6cm, minimum width=4em, minimum height=4em, text width=4em,xshift=0em,yshift=0em,fill=green!50,opacity=0.2] (n61) {\small{}};
+%\node [block, above of = n61, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n62) {\small{}};
+%\node [block, above of = n62, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n63) {\small{}};
+%\node [block, above of = n63, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n64) {\small{}};
+%\node [block, above of = n64, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n65) {\small{}};
+%\node [block, above of = n65, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n66) {\small{}};
+%\node [block, above of = n66, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n67) {\small{}};
+%\node [block, above of = n67, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n68) {\small{}};
+%\node [block, above of = n68, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n69) {\small{}};
+%\node [block, above of = n69, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n70) {\small{}};
+%\node [block, above of = n70, node distance=0cm, minimum width=4em, minimum height=4em, text width=4em,xshift=1em,yshift=1em,fill=green!50,opacity=0.2] (n700) {\small{}};
+
+\node [cloud, right of = n41, node distance=4cm, minimum width=4em, minimum height=4em, text width=4em,xshift=8em,yshift=5em,fill=red,opacity=0.2,label={[shift={(0.3,-1.8)}]{\includegraphics[width=0.23\linewidth]{images/b20.png}}}] (n700) { M or N};
+%Hadoop 
+\node[block, right of = n700, node distance=0cm, minimum width=8em, minimum height=22em, text width=4em,xshift=0em,yshift=0em,opacity=0.1,fill=gray!70,dashed,label={[shift={(0,-7.5)},rotate=0,color=black]{\small{HDFS based SPARK}}}](hd1){};
+%CNN
+\node[block, left of = n700, node distance=0cm, minimum width=73em, minimum height=22em, text width=4em,xshift=-41.5em,yshift=0em,opacity=0.1,fill=gray!70,dashed,label={[shift={(-0.9,-7.8)},rotate=0,color=red]{Convolutional Neural Network}}](cnn1){};
+%Pixel Box 
+\node [block, above of = n, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p1) {\small{}};
+\node [block, above of = n1, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p2) {\small{}};
+\node [block, above of = n2, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p3) {\small{}};
+\node [block, above of = n3, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p4) {\small{}};
+\node [block, above of = n4, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p5) {\small{}};
+\node [block, above of = n5, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p6) {\small{}};
+\node [block, above of = n6, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p7) {\small{}};
+
+%\node [block, above of = n11, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p11) {\small{}};
+%\node [block, above of = n12, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p12) {\small{}};
+%\node [block, above of = n13, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p13) {\small{}};
+%\node [block, above of = n14, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p14) {\small{}};
+%\node [block, above of = n15, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p15) {\small{}};
+%\node [block, above of = n16, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p16) {\small{}};
+%\node [block, above of = n17, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p17) {\small{}};
+
+\node [block, above of = n21, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p21) {\small{}};
+\node [block, above of = n22, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p22) {\small{}};
+\node [block, above of = n23, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p23) {\small{}};
+\node [block, above of = n24, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p24) {\small{}};
+\node [block, above of = n25, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p25) {\small{}};
+\node [block, above of = n26, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p26) {\small{}};
+\node [block, above of = n27, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p27) {\small{}};
+
+\node [block, above of = n31, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p31) {\small{}};
+\node [block, above of = n32, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p32) {\small{}};
+\node [block, above of = n33, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p33) {\small{}};
+\node [block, above of = n34, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p34) {\small{}};
+\node [block, above of = n35, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p35) {\small{}};
+\node [block, above of = n36, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p36) {\small{}};
+\node [block, above of = n37, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p37) {\small{}};
+
+\node [block, above of = n41, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p41) {\small{}};
+\node [block, above of = n42, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p42) {\small{}};
+\node [block, above of = n43, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p43) {\small{}};
+\node [block, above of = n44, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p44) {\small{}};
+\node [block, above of = n45, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p45) {\small{}};
+\node [block, above of = n46, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p46) {\small{}};
+\node [block, above of = n47, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p47) {\small{}};
+
+%\node [block, above of = n51, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p51) {\small{}};
+%\node [block, above of = n52, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p52) {\small{}};
+%\node [block, above of = n53, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p53) {\small{}};
+%\node [block, above of = n54, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p54) {\small{}};
+%\node [block, above of = n55, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p55) {\small{}};
+%\node [block, above of = n56, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p56) {\small{}};
+%\node [block, above of = n57, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p57) {\small{}};
+
+%\node [block, above of = n61, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=1em,fill=blue,opacity=0.5, rounded corners=0] (p61) {\small{}};
+%\node [block, above of = n62, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1.7em,yshift=1em,fill=orange,opacity=0.5, rounded corners=0] (p62) {\small{}};
+%\node [block, above of = n63, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=3em,fill=red,opacity=0.5, rounded corners=0] (p63) {\small{}};
+%\node [block, above of = n64, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=4em,yshift=2em,fill=pink,opacity=0.5, rounded corners=0] (p64) {\small{}};
+%\node [block, above of = n65, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=1em,yshift=2.5em,fill=cyan,opacity=0.5, rounded corners=0] (p65) {\small{}};
+%\node [block, above of = n66, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=2em,yshift=3em,fill=red!49,opacity=0.5, rounded corners=0] (p66) {\small{}};
+%\node [block, above of = n67, node distance=0cm, minimum width=1em, minimum height=1em, text width=0.1em,xshift=3em,yshift=4em,fill=blue!40,opacity=0.5, rounded corners=0] (p67) {\small{}};
+
+
+%Path
+%\draw[bend left=40,->,thick,red,postaction={decorate,decoration={raise=2.2ex,text along path,text align=center,text={getFourSeg}}}] (n.east) to [out=90,in=90] (n11.west);
+
+\draw[->,thick,red] (im.east) to (dn1.west);
+\draw[->,thick,red] (im.east) to (dn2.west);
+\draw[->,thick,red] (im.east) to (dn3.west);
+
+
+
+\draw[->,thick,red] (dn1.east) to (n.west);
+\draw[->,thick,red] (dn1.east) to (n1.west);
+\draw[->,thick,red] (dn1.east) to (n3.west);
+\draw[->,dashed,red] (dn1.east) to (n8.west);
+\draw[->,dashed,red] (dn1.east) to (n6.west);
+\draw[->,dashed,red] (dn2.east) to (n7.west);
+\draw[->,thick,red] (dn2.east) to (n2.west);
+\draw[->,thick,red] (dn2.east) to (n5.west);
+\draw[->,thick,red] (dn2.east) to (n4.west);
+\draw[->,thick,red] (dn2.east) to (n9.west);
+\draw[->,thick,red] (dn1.east) to (n10.west);
+
+\draw[->,dashed,red] (dn3.east) to (n7.west);
+\draw[->,thick,red] (dn3.east) to (n2.west);
+\draw[->,thick,red] (dn3.east) to (n5.west);
+\draw[->,thick,red] (dn3.east) to (n4.west);
+\draw[->,thick,red] (dn3.east) to (n4.west);
+\draw[->,thick,red] (dn3.east) to (n1.west);
+
+
+%\draw[->,thick,red] (n.east) to (n11.west);
+%\draw[->,thick,red] (n.east) to (n12.west);
+%\draw[->,thick,red] (n.east) to (n13.west);
+%\draw[->,dashed,red] (n.east) to (n18.west);
+%\draw[->,dashed,red] (n.east) to (n16.west);
+%\draw[->,dashed,red] (n1.east) to (n11.west);
+%\draw[->,thick,red] (n3.east) to (n12.west);
+%\draw[->,thick,red] (n3.east) to (n13.west);
+%\draw[->,thick,red] (n3.east) to (n14.west);
+%\draw[->,dashed,red] (n3.east) to (n18.west);
+%\draw[->,dashed,red] (n3.east) to (n19.west);
+%\draw[->,dashed,red] (n5.east) to (n11.west);
+%\draw[->,thick,red] (n5.east) to (n12.west);
+%\draw[->,thick,red] (n5.east) to (n13.west);
+%\draw[->,thick,red] (n5.east) to (n14.west);
+
+%\draw[->,dashed,red] (n7.east) to (n14.west);
+%\draw[->,dashed,red] (n7.east) to (n15.west);
+%\draw[->,thick,red] (n7.east) to (n16.west);
+%\draw[->,thick,red] (n7.east) to (n17.west);
+%\draw[->,thick,red] (n7.east) to (n18.west);
+%\draw[->,dashed,red] (n7.east) to (n19.west);
+
+%\draw[->,dashed,red] (n9.east) to (n12.west);
+%\draw[->,dashed,red] (n9.east) to (n13.west);
+%\draw[->,thick,red] (n9.east) to (n17.west);
+%\draw[->,thick,red] (n9.east) to (n18.west);
+%\draw[->,thick,red] (n9.east) to (n19.west);
+%\draw[->,dashed,red] (n9.east) to (n20.west);
+%\draw[->,dashed,red] (n9.east) to (n200.west);
+%2nd layer
+\draw[->,thick,red] (n.east) to (n21.west);
+\draw[->,thick,red] (n.east) to (n22.west);
+\draw[->,thick,red] (n.east) to (n23.west);
+\draw[->,dashed,red] (n1.east) to (n28.west);
+\draw[->,dashed,red] (n1.east) to (n26.west);
+\draw[->,dashed,red] (n1.east) to (n22.west);
+\draw[->,thick,red] (n3.east) to (n22.west);
+\draw[->,thick,red] (n3.east) to (n23.west);
+\draw[->,thick,red] (n3.east) to (n24.west);
+\draw[->,dashed,red] (n3.east) to (n28.west);
+\draw[->,dashed,red] (n3.east) to (n29.west);
+\draw[->,dashed,red] (n5.east) to (n21.west);
+\draw[->,thick,red] (n5.east) to (n22.west);
+\draw[->,thick,red] (n5.east) to (n23.west);
+\draw[->,thick,red] (n5.east) to (n24.west);
+
+\draw[->,dashed,red] (n7.east) to (n24.west);
+\draw[->,dashed,red] (n7.east) to (n25.west);
+\draw[->,thick,red] (n7.east) to (n26.west);
+\draw[->,thick,red] (n7.east) to (n27.west);
+\draw[->,thick,red] (n7.east) to (n28.west);
+\draw[->,dashed,red] (n7.east) to (n29.west);
+
+\draw[->,dashed,red] (n9.east) to (n22.west);
+\draw[->,dashed,red] (n9.east) to (n23.west);
+\draw[->,thick,red] (n9.east) to (n27.west);
+\draw[->,thick,red] (n9.east) to (n28.west);
+\draw[->,thick,red] (n9.east) to (n29.west);
+\draw[->,dashed,red] (n9.east) to (n30.west);
+\draw[->,dashed,red] (n9.east) to (n300.west);
+
+
+%3rd layer
+%\draw[->,thick,red] (n21.east) to (n31.west);
+\draw[->,thick,red] (n21.east) to (n32.west);
+\draw[->,thick,red] (n21.east) to (n33.west);
+%\draw[->,dashed,red] (n21.east) to (n38.west);
+\draw[->,dashed,red] (n21.east) to (n36.west);
+\draw[->,dashed,red] (n21.east) to (n32.west);
+%\draw[->,thick,red] (n23.east) to (n32.west);
+\draw[->,thick,red] (n23.east) to (n33.west);
+\draw[->,thick,red] (n23.east) to (n34.west);
+%\draw[->,dashed,red] (n23.east) to (n38.west);
+\draw[->,dashed,red] (n23.east) to (n39.west);
+\draw[->,dashed,red] (n25.east) to (n31.west);
+%\draw[->,thick,red] (n25.east) to (n32.west);
+\draw[->,thick,red] (n25.east) to (n33.west);
+\draw[->,thick,red] (n25.east) to (n34.west);
+
+\draw[->,dashed,red] (n27.east) to (n34.west);
+\draw[->,dashed,red] (n27.east) to (n35.west);
+%\draw[->,thick,red] (n27.east) to (n36.west);
+\draw[->,thick,red] (n27.east) to (n37.west);
+%\draw[->,thick,red] (n27.east) to (n38.west);
+\draw[->,dashed,red] (n27.east) to (n39.west);
+
+\draw[->,dashed,red] (n29.east) to (n32.west);
+\draw[->,dashed,red] (n29.east) to (n33.west);
+%\draw[->,thick,red] (n29.east) to (n37.west);
+\draw[->,thick,red] (n29.east) to (n38.west);
+%\draw[->,thick,red] (n29.east) to (n39.west);
+\draw[->,dashed,red] (n29.east) to (n40.west);
+\draw[->,dashed,red] (n29.east) to (n400.west);
+
+%4th layer
+%\draw[->,thick,red] (n31.east) to (n41.west);
+\draw[->,thick,red] (n31.east) to (n42.west);
+\draw[->,thick,red] (n31.east) to (n43.west);
+%\draw[->,dashed,red] (n31.east) to (n48.west);
+\draw[->,dashed,red] (n31.east) to (n46.west);
+\draw[->,dashed,red] (n31.east) to (n42.west);
+%\draw[->,thick,red] (n33.east) to (n42.west);
+\draw[->,thick,red] (n33.east) to (n43.west);
+\draw[->,thick,red] (n33.east) to (n44.west);
+%\draw[->,dashed,red] (n33.east) to (n48.west);
+\draw[->,dashed,red] (n33.east) to (n49.west);
+\draw[->,dashed,red] (n35.east) to (n41.west);
+%\draw[->,thick,red] (n35.east) to (n42.west);
+\draw[->,thick,red] (n35.east) to (n43.west);
+\draw[->,thick,red] (n35.east) to (n44.west);
+
+\draw[->,dashed,red] (n37.east) to (n44.west);
+\draw[->,dashed,red] (n37.east) to (n45.west);
+%\draw[->,thick,red] (n37.east) to (n46.west);
+\draw[->,thick,red] (n37.east) to (n47.west);
+%\draw[->,thick,red] (n37.east) to (n48.west);
+\draw[->,dashed,red] (n37.east) to (n49.west);
+
+\draw[->,dashed,red] (n39.east) to (n42.west);
+\draw[->,dashed,red] (n39.east) to (n43.west);
+%\draw[->,thick,red] (n39.east) to (n47.west);
+\draw[->,thick,red] (n39.east) to (n48.west);
+%\draw[->,thick,red] (n39.east) to (n49.west);
+\draw[->,dashed,red] (n39.east) to (n50.west);
+\draw[->,dashed,red] (n39.east) to (n500.west);
+
+%5th layer
+%\draw[->,thick,red] (n41.east) to (n41.west);
+%\draw[->,thick,red] (n41.east) to (n42.west);
+%\draw[->,thick,red] (n41.east) to (n43.west);
+%\draw[->,dashed,red] (n41.east) to (n48.west);
+%\draw[->,dashed,red] (n41.east) to (n46.west);
+%\draw[->,dashed,red] (n41.east) to (n42.west);
+%\draw[->,thick,red] (n43.east) to (n42.west);
+%\draw[->,thick,red] (n43.east) to (n43.west);
+%\draw[->,thick,red] (n43.east) to (n44.west);
+%\draw[->,dashed,red] (n43.east) to (n48.west);
+%\draw[->,dashed,red] (n43.east) to (n49.west);
+%\draw[->,dashed,red] (n45.east) to (n41.west);
+%\draw[->,thick,red] (n45.east) to (n42.west);
+%\draw[->,thick,red] (n45.east) to (n43.west);
+%\draw[->,thick,red] (n45.east) to (n44.west);
+
+%\draw[->,dashed,red] (n47.east) to (n44.west);
+%\draw[->,dashed,red] (n47.east) to (n45.west);
+\draw[->,thick,red] (n500.east) to (n700.west);
+\draw[->,thick,red] (n41.east) to (n700.west);
+\draw[->,thick,red] (n42.east) to (n700.west);
+\draw[->,dashed,red] (n43.east) to (n700.west);
+
+\draw[->,dashed,red] (n44.east) to (n700.west);
+\draw[->,dashed,red] (n45.east) to (n700.west);
+\draw[->,thick,red] (n46.east) to (n700.west);
+\draw[->,thick,red] (n47.east) to (n700.west);
+\draw[->,thick,red] (n48.east) to (n700.west);
+\draw[->,dashed,red] (n49.east) to (n700.west);
+\draw[->,dashed,red] (n50.east) to (n700.west);
+
+% Labels
+\node [block, above of = im, node distance=1.8cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 128 x 128 x 3}};
+
+\node [block, below of = im, node distance=2.2cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed] (n1) {\small{Input Image}};
+
+\node [block, above of = n10, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 128 x 128 x 3}};
+
+\node [block, below of = n, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=0em,yshift=-1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{Conv 1d Layer + ReLu}};
+
+%\node [block, above of = n200, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 128 x 128 x 3}};
+
+%\node [block, below of = n11, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=0em,yshift=-1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{Conv 1d Layer + ReLu}};
+
+\node [block, above of = n300, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 128 x 128 x 3}};
+
+\node [block, below of = n21, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=0em,yshift=-1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{Batch Normalization}};
+
+\node [block, above of = n400, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 64 x 64 x 3}};
+
+\node [block, below of = n31, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=0em,yshift=-1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{Maxpooling Layer}};
+
+\node [block, above of = n500, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 64 x 64 x 3}};
+
+\node [block, below of = n41, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=0em,yshift=-1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{Fully Connected}};
+
+\node [block, above of = n500, node distance=1cm, minimum width=6em, minimum height=2em, text width=6em,xshift=-0.2em,yshift=1em,fill=white,opacity=0.9,dashed=0] (n1) {\small{ 64 x 64 x 3}};
+
+
+\end{tikzpicture}
+	
+	
+\end{document}
