@@ -1,0 +1,43 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+	\pagestyle{empty}
+	
+	
+	% Define block styles
+	\tikzstyle{decision} = [diamond, draw, fill=yellow!30, 
+	text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!10, text centered, minimum height=2em, minimum width=2em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=blue!30, node distance=3cm,
+	minimum height=2em]
+	\begin{tikzpicture}[node distance = 0cm, auto]
+	% Place nodes
+	\node [block, node distance=0cm,fill=orange] (00) {\small{1}};
+	\node [block, node distance=0.7cm,right of = 00,fill=orange] (01) {\small{9}};	\node [block, node distance=0.7cm,right of = 01,fill=green] (02) {\small{2}};	\node [block, node distance=0.7cm,right of = 02,fill=green] (03) {\small{3}};	
+	\node [block, node distance=0.7cm,below of = 00,fill=orange] (10) {\small{5}};
+	\node [block, node distance=0.7cm,right of = 10,fill=orange] (11) {\small{6}};	\node [block, node distance=0.7cm,right of = 11,fill=green] (12) {\small{7}};	\node [block, node distance=0.7cm,right of = 12,fill=green] (13) {\small{8}};
+	\node [block, node distance=0.7cm,below of = 10,fill=blue!50] (20) {\small{0}};
+	\node [block, node distance=0.7cm,right of = 20,fill=blue!50] (21) {\small{1}};	\node [block, node distance=0.7cm,right of = 21,fill=yellow!50] (22) {\small{2}};	\node [block, node distance=0.7cm,right of = 22,fill=yellow!50] (23) {\small{3}};
+	\node [block, node distance=0.7cm,below of = 20,fill=blue!50] (30) {\small{5}};
+	\node [block, node distance=0.7cm,right of = 30,fill=blue!50] (31) {\small{6}};	\node [block, node distance=0.7cm,right of = 31,fill=yellow!50] (32) {\small{7}};	\node [block, node distance=0.7cm,right of = 32,fill=yellow!50] (33) {\small{4}}; 
+
+\node [block, node distance=2cm,fill=orange,right of=13] (111) {\small{9}};
+\node [block, node distance=0.7cm,right of = 111,fill=green] (222) {\small{8}};
+\node [block, node distance=0.7cm,below of = 111,fill=blue!50] (333) {\small{6}};
+\node [block, node distance=0.7cm,below of = 222,fill=yellow!50] (444) {\small{7}};
+
+\draw[-,thick,red] (01.north) to [in=150,out=40]  (111.north);
+\draw[-,thick,green] (13.east) to [in=90,out=40]  (222.north);
+\draw[-,thick,blue!80] (31.south) to [in=-150,out=-40]  (333.south);
+\draw[-,thick,gray] (32.south) to [in=-120,out=-40]  (444.south);
+	\end{tikzpicture}
+	
+	
+\end{document}
