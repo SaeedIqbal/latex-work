@@ -1,0 +1,151 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+	\pagestyle{empty}
+	% Define block styles
+	\tikzstyle{decision} = [diamond, draw, fill=yellow!30, 
+	text width=4.5em, text badly centered, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=white!10,node distance=0.49cm,text centered, minimum height=1.5em, minimum width=1.5em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=blue!30, node distance=3cm,
+	minimum height=2em]
+\begin{tikzpicture}[node distance = 0cm, auto]
+% Place nodes
+\node [block] (00) {\small{0}};
+\node [block,left of = 00] (e1) {\small{2}};
+\node [block,right of = 00] (01) {\small{0}};	
+\node [block,right of = 01] (02) {\small{0}};	
+\node [block,right of = 02] (03) {\small{0}};
+\node [block,right of = 03] (04) {\small{0}};
+\node [block,right of = 04] (05) {\small{2}};
+\node [block,right of = 05] (06) {\small{9}};
+
+
+\node [block,below of=00] (10) {\small{6}};
+\node [block,left of = 10] (e2) {\small{3}};
+\node [block,right of = 10] (11) {\small{0}};
+\node [block,right of = 11] (12) {\small{9}};	
+\node [block,right of = 12] (13) {\small{0}};
+\node [block,right of = 13] (14) {\small{7}};
+\node [block,right of = 14] (15) {\small{4}};
+\node [block,right of = 15] (16) {\small{3}};
+
+\node [block,below of=10] (20) {\small{0}};
+\node [block,left of = 20] (e3) {\small{5}};
+\node [block,right of = 20] (21) {\small{0}};
+\node [block,right of = 21] (22) {\small{0}};	
+\node [block,right of = 22] (23) {\small{0}};
+\node [block,right of = 23] (24) {\small{0}};
+\node [block,right of = 24] (25) {\small{9}};
+\node [block,right of = 25] (26) {\small{7}};
+
+\node [block,below of=20] (30) {\small{7}};
+\node [block,left of = 30] (e4) {\small{3}};
+\node [block,right of = 30] (31) {\small{0}};
+\node [block,right of = 31] (32) {\small{3}};	
+\node [block,right of = 32] (33) {\small{0}};
+\node [block,right of = 33] (34) {\small{6}};
+\node [block,right of = 34] (35) {\small{3}};
+\node [block,right of = 35] (36) {\small{4}};
+
+
+\node [block,below of=30] (40) {\small{4}};
+\node [block,left of = 40] (e5) {\small{1}};
+\node [block,right of = 40] (41) {\small{2}};
+\node [block,right of = 41] (42) {\small{1}};	
+\node [block,right of = 42] (43) {\small{8}};
+\node [block,right of = 43] (44) {\small{3}};
+\node [block,right of = 44] (45) {\small{4}};
+\node [block,right of = 45] (46) {\small{6}};
+
+\node [block,below of=40] (50) {\small{3}};
+\node [block,left of = 50] (e6) {\small{3}};
+\node [block,right of = 50] (51) {\small{2}};
+\node [block,right of = 51] (52) {\small{4}};	
+\node [block,right of = 52] (53) {\small{1}};
+\node [block,right of = 53] (54) {\small{9}};
+\node [block,right of = 54] (55) {\small{8}};
+\node [block,right of = 55] (56) {\small{3}};
+
+\node [block,below of=50] (60) {\small{0}};
+\node [block,left of = 60] (e7) {\small{5}};
+\node [block,right of = 60] (61) {\small{1}};
+\node [block,right of = 61] (62) {\small{3}};	
+\node [block,right of = 62] (63) {\small{9}};
+\node [block,right of = 63] (64) {\small{2}};
+\node [block,right of = 64] (65) {\small{1}};
+\node [block,right of = 65] (66) {\small{4}};
+\node [block,below of = e7] (e8) {\small{3}};
+\node [block,right of = e8] (e9) {\small{1}};
+\node [block,right of = e9] (e10) {\small{4}};
+\node [block,right of = e10] (e11) {\small{3}};
+\node [block,right of = e11] (e12) {\small{4}};
+\node [block,right of = e12] (e13) {\small{5}};
+\node [block,right of = e13] (e14) {\small{2}};
+\node [block,right of = e14] (e15) {\small{3}};
+\node [block,right of = e15] (e16) {\small{1}};
+\node [block,above of = e16] (e17) {\small{5}};
+\node [block,above of = e17] (e18) {\small{4}};
+\node [block,above of = e18] (e19) {\small{3}};
+\node [block,above of = e19] (e20) {\small{2}};
+\node [block,above of = e20] (e21) {\small{4}};
+\node [block,above of = e21] (e22) {\small{3}};
+\node [block,above of = e22] (e23) {\small{2}};
+\node [block,above of = e23] (e24) {\small{1}};
+\node [block,left of = e24] (e25) {\small{6}};
+\node [block,left of = e25] (e26) {\small{5}};
+\node [block,left of = e26] (e27) {\small{4}};
+\node [block,left of = e27] (e28) {\small{0}};
+\node [block,left of = e28] (e29) {\small{1}};
+\node [block,left of = e29] (e30) {\small{0}};
+\node [block,left of = e30] (e31) {\small{2}};
+\node [block,left of = e31] (e32) {\small{4}};
+
+
+%\node [block,fill=red!70,left of = 02,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.40em] (bb) {};
+
+%\node [block,fill=blue!70,left of = 04,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.40em] (cc) {};
+
+%\node [block,fill=green,left of = 06,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.40em] (dd) {};
+
+%\node [block,fill=red!70,left of = 22,minimum height=4.3em, minimum width=4.1em,opacity=0.5,xshift=0.0em,yshift=-1.35em] (bb) {};
+
+%\node [block,fill=blue!50,left of = 24,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.35em] (bb) {};
+
+%\node [block,fill=green,left of = 26,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.35em] (bb) {};
+
+%\node [block,fill=red!70,left of = 42,minimum height=4.1em, minimum width=4.1em,opacity=0.3,xshift=0.0em,yshift=-1.35em] (bb) {};
+
+\node [block,fill=blue!50,left of = 44,minimum height=6.9em, minimum width=6.9em,opacity=0.3,xshift=-1.4em,yshift=4.25em] (bb) {};
+
+\node [block,fill=green,left of = 46,minimum height=4.2em, minimum width=4.1em,opacity=0.3,xshift=-0.05em,yshift=-2.8em] (bb) {};
+
+%\node [block,right of=26,node distance=2cm] (111) {\small{3}};
+%\node [block,right of = 111] (222) {\small{4}};
+%\node [block,right of = 222] (333) {\small{4}};
+%\node [block,below of = 111] (444) {\small{1}};
+%\node [block,right of = 444] (555) {\small{0}};
+%\node [block,right of = 555] (666) {\small{2}};
+%\node [block,below of = 444] (777) {\small{-1}};
+%\node [block,right of = 777] (888) {\small{0}};
+%\node [block,right of = 888] (999) {\small{3}};
+
+
+
+
+
+
+%\draw[-,thick,red] (01.north) to [in=150,out=40]  (111.north);
+%\draw[-,thick,green] (13.east) to [in=90,out=40]  (222.north);
+%\draw[-,thick,blue!50] (31.south) to [in=-150,out=-40]  (333.south);
+%\draw[-,thick,yellow!50] (32.south) to [in=-120,out=-40]  (444.south);
+	\end{tikzpicture}
+	
+	
+\end{document}
