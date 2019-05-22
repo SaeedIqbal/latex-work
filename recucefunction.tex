@@ -1,0 +1,214 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.text}
+
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+% %SMART DIAGRAM START
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{pgf}
+\usetikzlibrary{calc,shadows} 
+\makeatletter 
+\@namedef{color@1}{red!30}
+\@namedef{color@2}{cyan!30}   
+\@namedef{color@3}{blue!30} 
+\@namedef{color@4}{green!30}  
+\@namedef{color@5}{magenta!30} 
+\@namedef{color@6}{yellow!30}    
+\@namedef{color@7}{orange!30}    
+\@namedef{color@8}{violet!30}   
+
+\newcommand{\smartart}[1]
+
+% %END SMART DIAGRAM
+
+% 
+\usepackage{amsmath,bm,times}
+\newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
+\newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
+
+
+%
+
+\begin{document}
+\pagestyle{empty}
+% We need layers to draw the block diagram
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+
+\pgfsetlayers{background,main,foreground}
+
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+\usetikzlibrary{positioning, arrows,shadows}
+
+\tikzset{
+dropshadowfade/.style={drop shadow={shadow xshift=0.2em,
+shadow yshift=-0.2em, opacity=0.5
+},
+preaction={drop shadow ={shadow xshift=0.30em, shadow
+yshift=-0.30em, opacity=.3} ,
+preaction={
+drop shadow={opacity=.1,
+shadow xshift=0.4em, shadow yshift=-0.4em}}},
+},
+state/.style={draw, rounded corners, inner sep=1em, fill=blue!5,
+dropshadowfade,
+minimum height=4em,
+minimum width=4em },
+trans/.style={->,double distance = 1.5pt,draw,rounded corners=1em,thick,>=stealth'},
+transloopright/.style={out=15, in=345, looseness=3},
+transloopabove/.style={out=105, in=75, looseness=3},
+}
+
+
+\begin{tikzpicture}[node distance = 4cm, auto]\centering
+%\node[rectangle,
+%    rounded corners,
+%     thick,
+%     draw=gray,
+%     top color= white,
+%     bottom color=\col,
+%     drop shadow,
+%     text width=1.75cm,
+%     minimum width=2cm,
+%     minimum height=1cm,
+%     font=\small] (satellite\xi) at (\angle:2.75cm) {\gritem };
+%}%
+
+% Place nodes
+%\node [state,fill =blue!40] (jobtracker) {JobTracker};
+%\fit[state, fill=blue!10]{}
+%\begin{pgfonlayer}{background}
+%\node [state,minimum height=5.5em,label={[shift={(1.3,-2)}]JobTracker},minimum width=12.5em,fill=blue!10, fill opacity=1] (jtn){};
+%\end{pgfonlayer}
+
+
+\node [state,xshift=-5em,fill =blue!40,label={[shift={(0,0)}]Input}] (map1){\begin{tabular}{l}\\Sweet, this is the foo file.\\ Sweet, this is the bar file.\end{tabular}};
+
+\node [state,right of =map1,xshift=4em,yshift=5em,fill =blue!40,label={[shift={(0,0)}]Splitting}] (map3) {Sweet, this is the bar file.};
+
+\node [state,below of =map3,fill =blue!40] (map4) {Sweet, this is the bar file.};
+
+\node [state,right of =map3,xshift=3em,fill =blue!40,label={[shift={(0,0)}]Mapping}] (map5) {\begin{tabular}{l}\\ $<$Sweet,1$>$ \\ $<$this,1$>$ \\ $<$is,1$>$ \\ $<$the,1$>$ \\ $<$foo,1$>$ \\ $<$file,1$>$ \\ $<$.,1$>$ \end{tabular}};
+
+\node [state,below of =map5,fill =blue!40,yshift=-3em] (map6) {\begin{tabular}{l}\\ 
+$<$Sweet,1$>$
+\\ $<$this,1$>$
+ \\ $<$is,1$>$
+  \\ $<$the,1$>$
+   \\ $<$bar,1$>$
+    \\ $<$file,1$>$
+     \\ $<$.,1$>$ \\
+     \end{tabular}};	
+
+\node [state,right of =map5,yshift=20em,xshift=2em,fill =blue!40,label={[shift={(0,0)}]Shuffling}] (map7) {\begin{tabular}{l}\\ $<$Sweet,1$>$ \\ $<$Sweet,1$>$ \end{tabular}};
+
+\node [state,below of =map7,fill =blue!40,yshift=4em] (map8) {\begin{tabular}{l}\\ $<$this,1$>$ \\ $<$this,1$>$ \end{tabular}};
+
+\node [state,below of =map8,fill =blue!40,yshift=4em] (map9) {\begin{tabular}{l}\\ $<$is,1$>$ \\ $<$is,1$>$ \end{tabular}};
+
+\node [state,below of =map9,fill =blue!40,yshift=4em] (map10) {\begin{tabular}{l}\\ $<$the,1$>$ \\ $<$the,1$>$ \end{tabular}};
+
+\node [state,below of =map10,fill =blue!40,yshift=4em] (map11) {\begin{tabular}{l}\\ $<$foo,1$>$ \end{tabular}};
+
+\node [state,below of =map11,fill =blue!40,yshift=4em] (map12) {\begin{tabular}{l}\\ $<$bar,1$>$ \end{tabular}};
+
+\node [state,below of =map12,fill =blue!40,yshift=4em] (map13) {\begin{tabular}{l}\\ $<$file,1$>$ \\ $<$file,1$>$ \end{tabular}};
+
+\node [state,below of =map13,fill =blue!40,yshift=4em] (map14) {\begin{tabular}{l}\\ $<$.,1$>$ \\ $<$.,1$>$ \end{tabular}};
+
+\node [state,right of =map7,xshift=2em,fill =blue!40,label={[shift={(0,0)}]Reducing}] (map144) {\begin{tabular}{l}\\ $<$Sweet,2$>$ \end{tabular}};
+
+\node [state,below of =map144,fill =blue!40,yshift=4em] (map15) {\begin{tabular}{l}\\ $<$this,2$>$ \end{tabular}};
+
+\node [state,below of =map15,fill =blue!40,yshift=4em] (map16) {\begin{tabular}{l}\\ $<$is,2$>$ \end{tabular}};
+
+\node [state,below of =map16,fill =blue!40,yshift=4em] (map17) {\begin{tabular}{l}\\ $<$the,2$>$ \end{tabular}};
+
+\node [state,below of =map17,fill =blue!40,yshift=4em] (map18) {\begin{tabular}{l}\\ $<$bar,1$>$ \end{tabular}};
+
+\node [state,below of =map18,fill =blue!40,yshift=4em] (map19) {\begin{tabular}{l}\\ $<$foo,1$>$ \end{tabular}};
+
+\node [state,below of =map19,fill =blue!40,yshift=4em] (map20) {\begin{tabular}{l}\\ $<$file,2$>$ \end{tabular}};
+
+\node [state,below of =map20,fill =blue!40,yshift=4em] (map21) {\begin{tabular}{l}\\ $<$.,2$>$ \end{tabular}};
+
+\node [state,right of =map17,xshift=2em,fill =blue!40,label={[shift={(0,0)}]Final Result}] (map22) {\begin{tabular}{l}\\ $<$.,2$>$ \\ $<$bar,1$>$ \\$<$file,2$>$ \\$<$foo,$>$ \\$<$is,1$>$ \\$<$Sweet,1$>$ \\$<$the,2$>$ \\$<$this,2$>$ \\ \end{tabular}};
+
+
+
+%\begin{pgfonlayer}{background}
+%		\node  [state,minimum height=10.5em,minimum width=50em,xshift=2.5em,fill=blue!10,fill opacity=1,label={[shift={(-10,-2.3)},black]Input List}](jj){};\end{pgfonlayer}
+
+%\begin{pgfonlayer}{background}\node  [state,below of =jj,yshift=-12em,minimum height=8em,minimum width=8em,xshift=-0.6em,fill=blue!10,fill opacity=1,label={[shift={(-3,-2.3)},black]Output List}](op){};\end{pgfonlayer}
+
+
+
+\path [trans,dashed,black,->] (map1) edge [] node[auto,black,fill =white] {} (map3);
+
+\path [trans,dashed,black,->] (map1) edge [] node[auto,black,fill =white] {} (map4);
+
+\path [trans,dashed,black,->] (map3) edge [] node[auto,black,fill =white] {} (map5);
+\path [trans,dashed,black,->] (map4) edge [] node[auto,black,fill =white] {} (map6);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map7);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map7);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map8);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map8);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map9);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map9);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map10);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map10);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map11);
+%\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map11);
+
+%\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map12);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map12);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map13);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map13);
+
+\path [trans,dashed,black,->] (map5) edge [] node[auto,black,fill =white] {} (map14);
+\path [trans,dashed,black,->] (map6) edge [] node[auto,black,fill =white] {} (map14);
+
+\path [trans,dashed,black,->] (map7) edge [] node[auto,black,fill =white] {} (map144);
+
+\path [trans,dashed,black,->] (map8) edge [] node[auto,black,fill =white] {} (map15);
+
+\path [trans,dashed,black,->] (map9) edge [] node[auto,black,fill =white] {} (map16);
+
+\path [trans,dashed,black,->] (map10) edge [] node[auto,black,fill =white] {} (map17);
+\path [trans,dashed,black,->] (map11) edge [] node[auto,black,fill =white] {} (map18);
+\path [trans,dashed,black,->] (map12) edge [] node[auto,black,fill =white] {} (map19);
+\path [trans,dashed,black,->] (map13) edge [] node[auto,black,fill =white] {} (map20);
+\path [trans,dashed,black,->] (map14) edge [] node[auto,black,fill =white] {} (map21);
+
+\path [trans,dashed,black,->] (map144) edge [] node[auto,black,fill =white] {} (map22);
+
+\path [trans,dashed,black,->] (map15) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map16) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map17) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map18) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map19) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map20) edge [] node[auto,black,fill =white] {} (map22);
+\path [trans,dashed,black,->] (map21) edge [] node[auto,black,fill =white] {} (map22);
+%\path [trans,black!20,->,line width=2pt] ([yshift=-1em] map8) [bend left](2em,-3.5) -- (omap10) ;
+
+%\path [trans] (map8.south) (10,-2) -- (-2,-1)  ( map9) ;
+\end{tikzpicture}
+\end{document}
